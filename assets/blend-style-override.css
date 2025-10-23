@@ -1,0 +1,535 @@
+/* Blend Style Override - Transforming Atlas Card to Blend (blendiow.co.uk) Style */
+
+/* ====================
+   FONT FACE DECLARATIONS
+   ==================== */
+
+/* Youth - Display Font */
+@font-face {
+  font-family: 'Youth';
+  src: url('/assets/fonts-blend/Youth-Medium.woff2') format('woff2'),
+       url('/assets/fonts-blend/Youth-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Aeonik - Body Font */
+@font-face {
+  font-family: 'Aeonik';
+  src: url('/assets/fonts-blend/Aeonik-Regular.woff2') format('woff2'),
+       url('/assets/fonts-blend/Aeonik-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Aeonik';
+  src: url('/assets/fonts-blend/Aeonik-Bold.woff2') format('woff2'),
+       url('/assets/fonts-blend/Aeonik-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Aeonik Fono - Monospace Font */
+@font-face {
+  font-family: 'Aeonik Fono';
+  src: url('/assets/fonts-blend/AeonikFonoTRIAL-Regular.woff2') format('woff2'),
+       url('/assets/fonts-blend/AeonikFonoTRIAL-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ====================
+   CSS VARIABLES OVERRIDE
+   ==================== */
+
+:root {
+  /* Blend Color Palette (RGB format for opacity support) */
+  --color-orange: 251 115 57;          /* #FB7339 - Primary CTA */
+  --color-white: 242 239 233;          /* #F2EFE9 - Off-white */
+  --color-light-beige: 215 209 198;    /* #D7D1C6 - Light beige */
+  --color-dark-beige: 163 155 139;     /* #A39B8B - Dark beige */
+  --color-dark-grey: 87 83 73;         /* #575349 - Dark grey-brown */
+  --color-black: 0 0 0;                /* #000000 - Black */
+  --color-real-white: 255 255 255;     /* #FFFFFF - Pure white */
+  --color-green: 60 66 53;             /* #3C4235 - Muted green */
+
+  /* Override existing color variables */
+  --color-primary-100: rgb(251 115 57);   /* Orange replaces blue */
+  --color-primary-300: rgb(251 115 57);   /* Orange replaces dark blue */
+  --color-neutral-100: rgb(87 83 73);     /* Dark grey replaces black */
+  --color-neutral-200: rgb(163 155 139);  /* Dark beige */
+  --color-neutral-300: rgb(215 209 198);  /* Light beige */
+  --color-neutral-400: rgb(163 155 139);  /* Dark beige */
+  --color-neutral-500: rgb(87 83 73);     /* Dark grey */
+  --color-neutral-600: rgb(87 83 73);     /* Dark grey text */
+  --body-background: rgb(242 239 233);    /* Off-white background */
+  --body-color: rgb(87 83 73);            /* Dark text */
+
+  /* Blend Fonts */
+  --font-display: 'Youth', sans-serif;
+  --font-body: 'Aeonik', sans-serif;
+  --font-mono: 'Aeonik Fono', monospace;
+
+  /* Blend Easing Functions */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-slow: cubic-bezier(0.33, 1, 0.68, 1);
+  --ease-in: cubic-bezier(0.12, 0, 0.39, 0);
+  --ease-in-out: cubic-bezier(0.86, 0, 0.07, 1);
+  --ease-out-back: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+  /* Spacing */
+  --padding-container: 2rem;
+  --padding-half-container: 1rem;
+}
+
+/* ====================
+   BODY & BACKGROUND
+   ==================== */
+
+body {
+  background-color: rgb(var(--color-white)) !important;  /* #F2EFE9 off-white */
+  color: rgb(var(--color-dark-grey)) !important;         /* #575349 dark text */
+  font-family: var(--font-body) !important;
+}
+
+/* ====================
+   TYPOGRAPHY
+   ==================== */
+
+/* Headings */
+h1, h2, h3, h4, h5, h6,
+.font-title-1,
+.font-title-2,
+.font-title-3,
+.font-title-4 {
+  font-family: var(--font-display) !important;
+  font-weight: 500 !important;
+  color: rgb(var(--color-dark-grey)) !important;
+  letter-spacing: -0.04em !important;
+}
+
+/* Body text */
+p, span, div, a, li,
+.font-body,
+.font-subtitle-2 {
+  font-family: var(--font-body) !important;
+  color: rgb(var(--color-dark-grey)) !important;
+}
+
+/* Monospace/Technical text */
+.font-tech-footer,
+.font-footnote,
+code, pre {
+  font-family: var(--font-mono) !important;
+  color: rgb(var(--color-dark-grey)) !important;
+}
+
+/* ====================
+   BUTTONS
+   ==================== */
+
+/* Primary Button - Orange */
+button,
+.btn,
+.button,
+[class*="button"],
+.link[data-astro-cid-5inhirvf] {
+  background-color: rgb(var(--color-orange)) !important;  /* #FB7339 */
+  color: rgb(var(--color-white)) !important;
+  border-radius: 0.5em !important;
+  border: none !important;
+  padding: 1.5em 2em !important;
+  font-family: var(--font-body) !important;
+  font-weight: 400 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+button:hover,
+.btn:hover,
+.button:hover,
+[class*="button"]:hover,
+.link[data-astro-cid-5inhirvf]:hover {
+  transform: scale(1.05) !important;
+  background-color: rgba(var(--color-orange), 0.9) !important;
+}
+
+/* Secondary Button - Light Beige */
+.button-secondary,
+.btn-secondary {
+  background-color: rgb(var(--color-light-beige)) !important;  /* #D7D1C6 */
+  color: rgb(var(--color-dark-grey)) !important;
+}
+
+.button-secondary:hover,
+.btn-secondary:hover {
+  background-color: rgb(var(--color-dark-beige)) !important;  /* #A39B8B */
+  color: rgb(var(--color-white)) !important;
+}
+
+/* Outline Button */
+.button-outline {
+  background-color: transparent !important;
+  border: 1.5px solid rgb(var(--color-dark-grey)) !important;
+  color: rgb(var(--color-dark-grey)) !important;
+}
+
+.button-outline:hover {
+  background-color: rgb(var(--color-dark-grey)) !important;
+  color: rgb(var(--color-white)) !important;
+}
+
+/* Dialog/Modal Buttons */
+.btn.svelte-1np6nuj {
+  background-color: rgb(var(--color-light-beige)) !important;
+  color: rgb(var(--color-dark-grey)) !important;
+  border-radius: 0.5em !important;
+}
+
+.btn.svelte-1np6nuj:hover,
+.btn.svelte-1np6nuj:focus-visible {
+  background-color: rgb(var(--color-dark-beige)) !important;
+}
+
+/* Close Button */
+.close-btn.svelte-1np6nuj {
+  background-color: rgb(var(--color-light-beige)) !important;
+  color: rgb(var(--color-dark-grey)) !important;
+}
+
+.close-btn.svelte-1np6nuj:hover {
+  background-color: rgb(var(--color-dark-beige)) !important;
+}
+
+/* ====================
+   LINKS
+   ==================== */
+
+a {
+  color: rgb(var(--color-orange)) !important;
+  text-decoration: none;
+  transition: color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+a:hover {
+  color: rgb(var(--color-dark-grey)) !important;
+  text-decoration: underline;
+}
+
+.link[data-astro-cid-erzklfjd] {
+  border-color: rgb(var(--color-dark-grey)) !important;
+  color: rgb(var(--color-dark-grey)) !important;
+  background-color: transparent !important;
+}
+
+.link[data-astro-cid-erzklfjd]:hover,
+.link[data-astro-cid-erzklfjd]:focus-visible {
+  border-color: rgb(var(--color-orange)) !important;
+  background-color: rgb(var(--color-orange)) !important;
+  color: rgb(var(--color-white)) !important;
+}
+
+/* ====================
+   BACKGROUNDS & SECTIONS
+   ==================== */
+
+/* Card/Panel backgrounds */
+.card,
+[class*="card"],
+section {
+  background-color: #FDFDFD !important;  /* Near-white */
+  color: rgb(var(--color-dark-grey)) !important;
+}
+
+/* Dialog/Modal backgrounds */
+.dialog.svelte-1np6nuj {
+  background-color: rgb(var(--color-white)) !important;  /* #F2EFE9 */
+}
+
+.card.svelte-1np6nuj {
+  background-color: rgb(var(--color-white)) !important;
+  border: 1px solid rgb(var(--color-light-beige)) !important;
+}
+
+/* Backdrop */
+.dialog[open].svelte-1np6nuj::backdrop {
+  background-color: rgba(var(--color-dark-grey), 0.5) !important;
+  backdrop-filter: blur(105px) !important;
+}
+
+/* ====================
+   BORDERS
+   ==================== */
+
+/* Update border colors to match Blend palette */
+*[class*="border"],
+input,
+select,
+textarea {
+  border-color: rgb(var(--color-light-beige)) !important;
+}
+
+*[class*="border"]:hover,
+input:hover,
+select:hover,
+textarea:hover {
+  border-color: rgb(var(--color-dark-beige)) !important;
+}
+
+*[class*="border"]:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: rgb(var(--color-orange)) !important;
+  outline: none !important;
+}
+
+/* ====================
+   FORMS
+   ==================== */
+
+input,
+select,
+textarea {
+  background-color: #FDFDFD !important;
+  color: rgb(var(--color-dark-grey)) !important;
+  border: 1px solid rgb(var(--color-light-beige)) !important;
+  border-radius: 0.5em !important;
+  padding: 1em !important;
+  font-family: var(--font-body) !important;
+  font-size: 1.25em !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: rgb(var(--color-dark-beige)) !important;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: rgb(var(--color-orange)) !important;
+  outline: 2px solid rgba(var(--color-orange), 0.2) !important;
+  outline-offset: 2px;
+}
+
+/* ====================
+   IMAGE POPUP
+   ==================== */
+
+.image-popup.svelte-1tt7ypl {
+  background-color: rgba(var(--color-light-beige), 0.3) !important;
+  backdrop-filter: blur(105px) !important;
+  border: 1px solid rgb(var(--color-light-beige)) !important;
+  color: rgb(var(--color-dark-grey)) !important;
+}
+
+.image-popup.svelte-1tt7ypl:hover,
+.image-popup.svelte-1tt7ypl:focus-visible {
+  background-color: rgba(var(--color-dark-beige), 0.5) !important;
+}
+
+/* ====================
+   GRADIENTS & EFFECTS
+   ==================== */
+
+/* Replace dark gradients with light Blend-style backgrounds */
+[style*="linear-gradient"] {
+  background-image: linear-gradient(to bottom, #EFEDE9, #E1DED8) !important;
+}
+
+/* Fade effects */
+.fade-to-black[data-astro-cid-2v5op3b7]:after {
+  box-shadow: inset 0 0 384px 160px rgb(var(--color-white)) !important;
+}
+
+/* ====================
+   VIDEO CONTAINERS
+   ==================== */
+
+.video-wrapper[data-astro-cid-fdiklsgk] {
+  background-color: rgb(var(--color-light-beige)) !important;
+}
+
+/* ====================
+   NAVIGATION & MENU
+   ==================== */
+
+nav,
+.nav,
+[class*="nav"],
+[class*="menu"] {
+  background-color: rgba(var(--color-white), 0.9) !important;
+  backdrop-filter: blur(54px) !important;
+  border-bottom: 1px solid rgb(var(--color-light-beige)) !important;
+}
+
+nav a,
+.nav a,
+[class*="nav"] a,
+[class*="menu"] a {
+  color: rgb(var(--color-dark-grey)) !important;
+}
+
+nav a:hover,
+.nav a:hover,
+[class*="nav"] a:hover,
+[class*="menu"] a:hover {
+  color: rgb(var(--color-orange)) !important;
+}
+
+/* ====================
+   FOOTER
+   ==================== */
+
+footer,
+.footer,
+[data-astro-cid-lejjx2fa] {
+  background-color: rgb(var(--color-light-beige)) !important;
+  color: rgb(var(--color-dark-grey)) !important;
+  border-top: 1px solid rgb(var(--color-dark-beige)) !important;
+}
+
+footer a,
+.footer a {
+  color: rgb(var(--color-dark-grey)) !important;
+}
+
+footer a:hover,
+.footer a:hover {
+  color: rgb(var(--color-orange)) !important;
+}
+
+/* ====================
+   SCROLLBAR
+   ==================== */
+
+* {
+  scrollbar-color: rgb(var(--color-dark-beige)) rgb(var(--color-light-beige)) !important;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(var(--color-light-beige));
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(var(--color-dark-beige));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(var(--color-dark-grey));
+}
+
+/* ====================
+   ACCORDION SECTIONS
+   ==================== */
+
+.AccordionSection_button__8Nees,
+[class*="AccordionSection"] button {
+  background-color: rgb(var(--color-dark-beige)) !important;  /* #A39B8B */
+  color: #FDFDFD !important;
+  border-radius: 0.5em !important;
+  padding: 1.54em !important;
+}
+
+.AccordionSection_button__8Nees:hover {
+  background-color: rgb(var(--color-dark-grey)) !important;
+  transform: scale(1.04);
+}
+
+/* ====================
+   PAGINATION & INDICATORS
+   ==================== */
+
+.pagination-indicator[data-astro-cid-zs6k2ebs] {
+  background-color: rgba(var(--color-light-beige), 0.5) !important;
+  backdrop-filter: blur(20px) !important;
+}
+
+.pagination-indicator[data-astro-cid-zs6k2ebs] > div {
+  background-color: rgba(var(--color-dark-grey), 0.3) !important;
+}
+
+.pagination-indicator[data-astro-cid-zs6k2ebs] > div.active {
+  background-color: rgb(var(--color-orange)) !important;
+}
+
+/* ====================
+   RESPONSIVE ADJUSTMENTS
+   ==================== */
+
+@media (min-width: 768px) {
+  :root {
+    --padding-container: 2.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    font-size: 18px;
+  }
+}
+
+/* ====================
+   UTILITY OVERRIDES
+   ==================== */
+
+/* Override any remaining dark theme elements */
+.dark,
+[data-theme="dark"],
+body[data-theme="dark"] {
+  background-color: rgb(var(--color-white)) !important;
+  color: rgb(var(--color-dark-grey)) !important;
+}
+
+/* Ensure text is always readable */
+* {
+  color: rgb(var(--color-dark-grey));
+}
+
+h1, h2, h3, h4, h5, h6,
+.title,
+[class*="title"],
+[class*="heading"] {
+  color: rgb(var(--color-dark-grey)) !important;
+}
+
+/* ====================
+   ANIMATION UPDATES
+   ==================== */
+
+/* Update animation colors */
+@keyframes fade-in {
+  0% { opacity: 0; }
+  35% { opacity: 0; }
+  65% { opacity: 1; }
+  to { opacity: 1; }
+}
+
+@keyframes fade-out {
+  0% { opacity: 1; }
+  35% { opacity: 1; }
+  65% { opacity: 0; }
+  to { opacity: 0; }
+}
+
+/* Smooth all transitions */
+* {
+  transition-timing-function: var(--ease-out) !important;
+}
+
+/* ====================
+   END OF BLEND STYLE OVERRIDE
+   ==================== */
